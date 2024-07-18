@@ -7,21 +7,13 @@
     (flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
-        gridfinity-ezcal = pkgs.callPackage ./derivation.nix {};
       in {
-        packages = {
-          default = gridfinity-ezcal;
-          inherit gridfinity-ezcal;
+        devShells.default = pkgs.mkShell {
+          nativeBuildInputs = [
+            pkgs.poetry
+            pkgs.python3
+            pkgs.python3Packages.ipython
+          ];
         };
-        checks = {
-          test = pkgs.runCommandNoCC "gridfinity-ezcal-test" {} ''
-            mkdir -p $out
-            : ${gridfinity-ezcal}
-          '';
-        };
-    })) // {
-      overlays.default = final: prev: {
-        gridfinity-ezcal = prev.callPackage ./derivation.nix {};
-      };
-    };
+    }));
 }
