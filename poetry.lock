@@ -33,6 +33,25 @@ astroid = ["astroid (>=1,<2)", "astroid (>=2,<4)"]
 test = ["astroid (>=1,<2)", "astroid (>=2,<4)", "pytest"]
 
 [[package]]
+name = "bd_warehouse"
+version = "0.1.dev109+g8b50cf1"
+description = "A python CAD programming library"
+optional = false
+python-versions = ">=3.9"
+files = []
+develop = false
+
+[package.dependencies]
+build123d = "*"
+typing-extensions = ">=4.4.0,<5"
+
+[package.source]
+type = "git"
+url = "https://github.com/gumyr/bd_warehouse.git"
+reference = "HEAD"
+resolved_reference = "8b50cf1ac9b08a4bba662d5b196eb16bb954f083"
+
+[[package]]
 name = "build123d"
 version = "0.5.0"
 description = "A python CAD programming library"
@@ -688,4 +707,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "a7dde23639c6a77fdf8aee2179da1d3f74c882dc5139630e974c58ff6b435a44"
+content-hash = "89628d1224bcd1ee475a2d65eb7b217037ed054d6393237a1df0f798e047b346"
