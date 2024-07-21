@@ -3,6 +3,7 @@ from gridfinity_build123d import *
 
 # |bb -e '(printf "%.02f" (double (* (load-string (slurp *in*)) 25.4)))'<ret>
 
+#EZCal
 with BuildPart() as cutout:
     with BuildSketch():
         with BuildLine():
@@ -30,13 +31,6 @@ with BuildPart() as cutout:
             s21 = Bezier(s20 @ 1,(65.28, 10.92),(70.87, 10.92),(76.96, 13.72))
             s22 = Bezier(s21 @ 1,(82.80, 12.70),(84.33, 13.72),(83.57, 20.57))
             s23 = Line(s22 @ 1, s0 @ 0)
-
-            # 299.3
-            # 
-            #Line((1.33,     0.0),(299.35, 0.184))
-            #Line((299.35, 0.184),(297.27, 299.302))
-            #Line((297.27, 299.302),(1.33, 299.302))
-            #Line((0,      299.302),(1.33, 0.184))
         make_face()
     extrude(amount=5)
 
